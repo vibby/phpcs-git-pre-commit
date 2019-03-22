@@ -2,7 +2,7 @@
 
 PROJECT=`php -r "echo dirname(dirname(dirname(realpath('$0'))));"`
 echo $PROJECT;
-STAGED_FILES_CMD=`git diff --name-only --diff-filter=ACMR HEAD | grep \\\\.php`
+STAGED_FILES_CMD=`git diff --name-only --diff-filter=ACMR HEAD | grep \\\\.php`| grep src/
 
 # Determine if a file list is passed
 if [ "$#" -eq 1 ]
