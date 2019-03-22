@@ -1,15 +1,22 @@
 {
-    "name": "smgladkovskiy/phpcs-git-pre-commit",
-    "description": "PHPCS check before commit",
+    "name": "vibby/phpcs-git-pre-commit",
+    "description": "PHPCS check and php-cd-fixer before commit",
     "type": "scripts",
     "license": "MIT",
     "authors": [
         {
-            "name": "Sergey Gladkovskiy",
-            "email": "smgladkovskiy@gmail.com"
+            "name": "vibby",
+            "email": "vibby@vibby.fr"
         }
     ],
     "require": {
-        "squizlabs/php_codesniffer": "^2.7"
-    }
+        "squizlabs/php_codesniffer": "^2.7",
+        "friendsofphp/php-cs-fixer": "^2.7"
+    },
+    "post-install-cmd": [
+        "sh ./vendor/vibby/phpcs-git-pre-commit/src/setup.sh"
+    ],
+    "post-update-cmd": [
+        "sh ./vendor/vibby/phpcs-git-pre-commit/src/setup.sh"
+    ]
 }
