@@ -32,6 +32,7 @@ if [ "$FILES" != "" ]
 then
     echo "Running Code Sniffer. Code standard PSR2."
     ./vendor/bin/php-cs-fixer fix $FILES --config=$PROJECT/.php_cs --allow-risky=yes
+    git add $FILES;
     ./vendor/bin/phpcbf $FILES
     ./vendor/bin/phpcs --standard=PSR2 --encoding=utf-8 -n -p $FILES
     if [ $? != 0 ]
